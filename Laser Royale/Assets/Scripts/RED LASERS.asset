@@ -21,7 +21,7 @@ MonoBehaviour:
     m_physicsType: 0
     m_rayWidth: 0.01
     m_angularRange: 360
-    m_raysNumber: 2
+    m_raysNumber: 1
     m_minRadialDistance: 1
     m_maxRadialDistance: 25
     m_rotate: 1

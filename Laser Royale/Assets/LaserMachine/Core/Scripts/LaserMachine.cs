@@ -188,21 +188,46 @@ public class LaserMachine : MonoBehaviour {
                     );
 
 
+                    
                     if (hitInfo2D.collider)
                     {
-                        //IF RAYCAST HITS COLLIDER TAGGED "WIN" TRIGGER
-                        if (hitInfo2D.collider.tag == "WIN")
+
+                        ////IF RAYCAST HITS COLLIDER TAGGED "WIN" TRIGGER
+                        //if (hitInfo2D.collider.tag == "WIN")
+                        //{
+                        //    Debug.Log("WIN");
+                        //}
+
+                        
+                        List<Vector2> linePoints = new List<Vector2>();
+                        if (hitInfo2D.collider.CompareTag("Hittable") )
                         {
-                            Debug.Log("WIN");
+                            
+                            linePoints = new List<Vector2>(hitInfo2D.collider.gameObject.GetComponent<HittableObject>().Hit(element.transform.forward, hitInfo2D, m_currentProperties.m_maxRadialDistance));
+                                linePoints.Insert(0, element.transform.position);
                         }
+                            if (linePoints.Count != 0)
+                            {
+                                element.lineRenderer.positionCount = linePoints.Count;
 
-
-                        element.lineRenderer.SetPosition(1, hitInfo2D.point);
+                                for (int i = 0; i < linePoints.Count; i++)
+                                {
+                                    Vector2 point = linePoints[i];
+                                    element.lineRenderer.SetPosition(i, point);
+                                }
+                            }
+                            else
+                            {
+                                element.lineRenderer.positionCount = 2;
+                                element.lineRenderer.SetPosition(1, hitInfo2D.point);
+                            }
 
                         if( m_assignSparks )
                         {
-                            element.sparks.transform.position = hitInfo2D.point; //new Vector3(rhit.point.x, rhit.point.y, transform.position.z);
-                            element.sparks.transform.rotation = Quaternion.LookRotation( hitInfo2D.normal ) ;
+                                Vector3 lastPoint = element.lineRenderer.GetPosition(element.lineRenderer.positionCount - 1);
+                                element.sparks.transform.position = lastPoint;
+                                Vector2 lastDir = (element.lineRenderer.GetPosition(element.lineRenderer.positionCount - 2) - lastPoint).normalized;
+                                element.sparks.transform.rotation = Quaternion.LookRotation(lastDir);//hitInfo2D.normal ) ;
                         }
                         //Debug.Log("WIN");
                         /*

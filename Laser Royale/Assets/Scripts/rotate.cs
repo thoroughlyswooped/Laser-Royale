@@ -1,15 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class rotate : MonoBehaviour
+public class Rotate : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -17,6 +9,5 @@ public class rotate : MonoBehaviour
         float angle = Mathf.Atan2(dir.y,dir.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle-0,Vector3.forward);
         transform.rotation = rotation;
-
     }
 }

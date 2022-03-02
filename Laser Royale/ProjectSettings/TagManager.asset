@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Reflector
+  - WIN
+  - LASER
+  - Hittable
   layers:
   - Default
   - TransparentFX
