@@ -7,7 +7,7 @@ namespace Lightbug.LaserMachine
 
 
 
-public class LaserMachine : MonoBehaviour {
+public class LaserMachine : GridObject {
     public EdgeCollider2D edgeCollider;
     struct LaserElement 
     {
@@ -119,12 +119,6 @@ public class LaserMachine : MonoBehaviour {
 
         RaycastHit2D hitInfo2D;
         RaycastHit hitInfo3D;
-
-
-        // if(hitInfo2D.collider.isTrigger)
-        // {
-        //     Debug.Log("WIN");
-        // }
         
         foreach (LaserElement element in elementsList)
         {
@@ -179,57 +173,60 @@ public class LaserMachine : MonoBehaviour {
                         element.sparks.SetActive( hitInfo3D.collider != null );
                 }
 
-                else
+                else // 2-D Physics here
                 {
+                    // Don't hit this object with line cast by changing to new layer temporarily
+                    LayerMask ogLayer = gameObject.layer;
+                    gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+
                     hitInfo2D = Physics2D.Linecast( 
                         element.transform.position,
                         element.transform.position + element.transform.forward * m_currentProperties.m_maxRadialDistance,
                         m_currentProperties.m_layerMask 
                     );
+                    
+                    // Reset layer 
+                    gameObject.layer = ogLayer;
 
 
                     
                     if (hitInfo2D.collider)
                     {
-
-                        ////IF RAYCAST HITS COLLIDER TAGGED "WIN" TRIGGER
-                        //if (hitInfo2D.collider.tag == "WIN")
-                        //{
-                        //    Debug.Log("WIN");
-                        //}
-
-                        
                         List<Vector2> linePoints = new List<Vector2>();
                         if (hitInfo2D.collider.CompareTag("Hittable") )
                         {
-                            
+                            // We hit something that is marked as hittable, call recursively to hit functions
                             linePoints = new List<Vector2>(hitInfo2D.collider.gameObject.GetComponent<HittableObject>().Hit(element.transform.forward, hitInfo2D, m_currentProperties.m_maxRadialDistance));
+
+                                //add the start point to the begining of the list as it was removed when setting linepoints
                                 linePoints.Insert(0, element.transform.position);
                         }
-                            if (linePoints.Count != 0)
-                            {
-                                element.lineRenderer.positionCount = linePoints.Count;
 
-                                for (int i = 0; i < linePoints.Count; i++)
-                                {
-                                    Vector2 point = linePoints[i];
-                                    element.lineRenderer.SetPosition(i, point);
-                                }
-                            }
-                            else
+                        //Line Points is different from default
+                        if (linePoints.Count != 0)
+                        {
+                            element.lineRenderer.positionCount = linePoints.Count;
+
+                            for (int i = 0; i < linePoints.Count; i++)
                             {
-                                element.lineRenderer.positionCount = 2;
-                                element.lineRenderer.SetPosition(1, hitInfo2D.point);
+                                Vector2 point = linePoints[i];
+                                element.lineRenderer.SetPosition(i, point);
                             }
+                        }
+                        else
+                        {
+                            element.lineRenderer.positionCount = 2;
+                            element.lineRenderer.SetPosition(1, hitInfo2D.point);
+                        }
 
                         if( m_assignSparks )
                         {
-                                Vector3 lastPoint = element.lineRenderer.GetPosition(element.lineRenderer.positionCount - 1);
-                                element.sparks.transform.position = lastPoint;
-                                Vector2 lastDir = (element.lineRenderer.GetPosition(element.lineRenderer.positionCount - 2) - lastPoint).normalized;
-                                element.sparks.transform.rotation = Quaternion.LookRotation(lastDir);//hitInfo2D.normal ) ;
+                            Vector3 lastPoint = element.lineRenderer.GetPosition(element.lineRenderer.positionCount - 1);
+                            element.sparks.transform.position = lastPoint;
+                            Vector2 lastDir = (element.lineRenderer.GetPosition(element.lineRenderer.positionCount - 2) - lastPoint).normalized;
+                            element.sparks.transform.rotation = Quaternion.LookRotation(lastDir);//hitInfo2D.normal ) ;
                         }
-                        //Debug.Log("WIN");
+                        
                         /*
                         EXAMPLE : In this line you can add whatever functionality you want, 
                         for example, if the hitInfoXD.collider is not null do whatever thing you wanna do to the target object.
@@ -239,10 +236,13 @@ public class LaserMachine : MonoBehaviour {
                     }
                     else
                     {
+                        // We didn't hit anything, put point at max range in correct direction
                         element.lineRenderer.SetPosition(1, element.transform.position + element.transform.forward * m_currentProperties.m_maxRadialDistance);
 
                     }
 
+                    // Only activate sparks if we hit something
+                    // TODO: Ezra: this could be a cool place to have different particle effects for different hit objects
                     if( m_assignSparks )
                         element.sparks.SetActive( hitInfo2D.collider != null );
 

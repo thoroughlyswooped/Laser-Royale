@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class GridObject : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool lockRotation;
+    public bool lockTranslation;
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnMouseDown()
     {
-        
+        if(!(lockRotation && lockTranslation))
+        {
+            //TODO: Ezra: add functionality for translation or mode swapping
+            Rotate.instance.SetCurrTrans(transform);
+        }
     }
 }
