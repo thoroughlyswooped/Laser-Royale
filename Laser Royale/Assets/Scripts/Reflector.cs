@@ -9,6 +9,7 @@ public class Reflector : HittableObject
         var pos = hitInfo.point;
         Vector2 newDir = Vector2.Reflect(dir, hitInfo.normal);
 
+        // Stop hitting yourself
         LayerMask mask = LayerMask.NameToLayer("Ignore Raycast");
         LayerMask ogLayer = gameObject.layer;
         gameObject.layer = mask;
