@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Refractor : HittableObject
 {
-    private float _rfNdx = (float) 1.2;
+    private float _rfNdx = 1.3f;
 
     public float RefractionIndex
     {
@@ -71,7 +71,9 @@ public class Refractor : HittableObject
 
     private static Vector2 Refract(Vector2 vec1, Vector2 vec2, float inRefractionIndex, float outRefractionIndex)
     {
-        var outgoingAngle = Mathf.Asin((inRefractionIndex/outRefractionIndex) * Mathf.Sin(Vector2.SignedAngle(vec1, vec2)));
+        var sinTheta2 = (inRefractionIndex / outRefractionIndex) * Mathf.Sin(Vector2.SignedAngle(vec1, vec2));
+        // if (sinTheta2 > 1) return Vector2.zero; // how do we stop the refraction when it passes this critical angle?
+        var outgoingAngle = Mathf.Rad2Deg * Mathf.Asin(sinTheta2);
         return new Vector2(Mathf.Cos(outgoingAngle), Mathf.Sin(outgoingAngle));
     }
 }
