@@ -827,6 +827,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5861453312946511349, guid: f913a60dde75afa41a18a676f7270dea, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0cc71723894134b47acdf9c91d585767, type: 3}
+    - target: {fileID: 5861453312946511349, guid: f913a60dde75afa41a18a676f7270dea, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5861453312946511350, guid: f913a60dde75afa41a18a676f7270dea, type: 3}
       propertyPath: m_Name
       value: LaserShooter_StartPoint
@@ -861,6 +869,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8657055218820950080, guid: daec73d6c68444c4c85d837edad3fa8e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7482667652216324306, guid: 621d0717b7a6ea84fa0fb2a4d819142d, type: 3}
+    - target: {fileID: 8657055218820950080, guid: daec73d6c68444c4c85d837edad3fa8e, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8657055218820950083, guid: daec73d6c68444c4c85d837edad3fa8e, type: 3}
       propertyPath: m_RootOrder
       value: 4
