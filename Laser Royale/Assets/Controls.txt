@@ -1,0 +1,5 @@
+T - Enable Translation mode for moving objects around
+	- Items can be drug around the screen by clicking on them and then dropping them by releasing the left mouse.
+R - Enable Rotation mode for rotaing objects
+	- Items can be rotated around by clicking on them and moving the mouse to the disired rotation. Clicking the left mouse button again 
+	releases the item.
