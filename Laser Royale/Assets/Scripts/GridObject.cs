@@ -6,13 +6,24 @@ public class GridObject : MonoBehaviour
 {
     public bool lockRotation;
     public bool lockTranslation;
+    Rotate rotate;
 
+    public void Start()
+    {
+        if(Rotate.instance != null)
+        {
+            rotate = Rotate.instance;
+        }
+    }
 
     private void OnMouseDown()
     {
-        if(!(lockRotation && lockTranslation))
+        if (!lockTranslation && rotate.currEditMode == EditMode.Translate)
         {
-            //TODO: Ezra: add functionality for translation or mode swapping
+            Rotate.instance.SetCurrTrans(transform);
+        }
+        else if(!lockRotation && rotate.currEditMode == EditMode.Rotate)
+        {
             Rotate.instance.SetCurrTrans(transform);
         }
     }

@@ -3346,6 +3346,14 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5861453312946511355, guid: f913a60dde75afa41a18a676f7270dea, type: 3}
+      propertyPath: lockRotation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861453312946511355, guid: f913a60dde75afa41a18a676f7270dea, type: 3}
+      propertyPath: lockTranslation
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5861453312946511354, guid: f913a60dde75afa41a18a676f7270dea, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f913a60dde75afa41a18a676f7270dea, type: 3}
