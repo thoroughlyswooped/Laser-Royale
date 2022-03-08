@@ -2388,6 +2388,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1385978022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5000265744781906955, guid: ad8bb225eefe0834c8419ba12e72b11c, type: 3}
+  m_PrefabInstance: {fileID: 403912775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1385978026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385978022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73955fbf8620ab94dbc407b6233c40da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockRotation: 1
+  lockTranslation: 0
 --- !u!1 &1386467862
 GameObject:
   m_ObjectHideFlags: 0
@@ -3319,7 +3338,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserShooter_StartPoint
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5861453312946511352, guid: f913a60dde75afa41a18a676f7270dea, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861453312946511352, guid: f913a60dde75afa41a18a676f7270dea, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5861453312946511354, guid: f913a60dde75afa41a18a676f7270dea, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f913a60dde75afa41a18a676f7270dea, type: 3}
 --- !u!1 &2107151625
 GameObject:
