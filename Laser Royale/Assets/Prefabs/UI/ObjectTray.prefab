@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 520856491803821124}
   - component: {fileID: 520856491803821127}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ButtonArrow_Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -436,6 +436,7 @@ MonoBehaviour:
   panel: {fileID: 520856490981506095}
   buttonPos: {fileID: 520856492177629899}
   button: {fileID: 520856490984888517}
+  buttonArrow: {fileID: 520856491803821126}
 --- !u!1001 &1013630271652183654
 PrefabInstance:
   m_ObjectHideFlags: 0
