@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectTray : MonoBehaviour
@@ -11,6 +9,8 @@ public class ObjectTray : MonoBehaviour
     public Transform panel;
     public Transform buttonPos;
     public Transform button;
+    public Transform buttonArrow;
+    float smallNumber = 0.01f;
 
     public void Awake()
     {
@@ -37,9 +37,13 @@ public class ObjectTray : MonoBehaviour
     void OpenTray()
     {
         float y = 1f;
-        if (1 - panel.localScale.y > float.Epsilon)
+        if (1 - panel.localScale.y > smallNumber)
         {
             y = Mathf.Lerp(panel.localScale.y, 1, openSpeed);
+        }
+        else
+        {
+            buttonArrow.rotation = Quaternion.Euler(0, 0, 0f);
         }
        
         panel.localScale = new Vector3(panel.localScale.x, y, panel.localScale.z);
@@ -51,9 +55,13 @@ public class ObjectTray : MonoBehaviour
     {
         float y = 0f;
 
-        if (panel.localScale.y > float.Epsilon)
+        if (panel.localScale.y > smallNumber)
         {
             y = Mathf.Lerp(panel.localScale.y, 0, openSpeed);
+        }
+        else
+        {
+            buttonArrow.rotation = Quaternion.Euler(0, 0, 180f);
         }
 
         panel.localScale = new Vector3(panel.localScale.x, y, panel.localScale.z);

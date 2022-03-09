@@ -1,11 +1,15 @@
 using UnityEngine;
 
+[System.Serializable]
 public class Rotate : MonoBehaviour
 {
     Transform _currentTrans;
-    bool mousePressed = false;
+    bool m_mousePressed = false;
+    [SerializeField]
+    bool m_canBeDropped = true;
     public EditMode currEditMode {get; private set; }
     Vector2 dif;
+    Vector2 m_ogPosition;
 
     public static Rotate instance;
     private void Awake()
@@ -19,7 +23,6 @@ public class Rotate : MonoBehaviour
             Debug.LogWarning("There is already a 'Rotate' script in the scene but you are trying  to instantiate another one (there should only be one).");
         }
 
-        //TODO: Update this dynamically
         currEditMode = EditMode.Translate;
     }
 
@@ -41,11 +44,11 @@ public class Rotate : MonoBehaviour
         }
 
         // Get Mouse Input
-        if (Input.GetMouseButtonDown(0) && !mousePressed)
+        if (Input.GetMouseButtonDown(0) && !m_mousePressed)
         {
             MouseDown();
         }
-        if(Input.GetMouseButtonUp(0) && !mousePressed)
+        if(Input.GetMouseButtonUp(0) && !m_mousePressed)
         {
             MouseUp();
         }
@@ -67,20 +70,21 @@ public class Rotate : MonoBehaviour
         }
 
         // Reset mouse pressed for next frame
-        mousePressed = false;
+        m_mousePressed = false;
     }
 
     public void SetCurrTrans(Transform trans)
     {
         // Called from local OnMouseDown() so mouse has been pressed this frame
-        mousePressed = true;
+        m_mousePressed = true;
 
 
-        //Clear or set the current transform
+        // Clear or set the current transform
         _currentTrans = trans == _currentTrans ? null : trans;
 
         if(_currentTrans && currEditMode == EditMode.Translate)
         {
+            m_ogPosition = _currentTrans.position;
             dif = _currentTrans.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
     }
@@ -88,7 +92,7 @@ public class Rotate : MonoBehaviour
 
     public void MouseDown()
     {
-        mousePressed = true;
+        m_mousePressed = true;
 
         if (_currentTrans)
         {
@@ -99,12 +103,36 @@ public class Rotate : MonoBehaviour
 
     public void MouseUp()
     {
-        mousePressed = true;
+        m_mousePressed = true;
 
         if (_currentTrans && currEditMode == EditMode.Translate)
         {
+            if (!m_canBeDropped)
+            {
+                // return object to original position
+                _currentTrans.position = m_ogPosition;
+            }
+
+            _currentTrans.GetComponent<GridObject>().RevertToNormalState();
+
             // Clear current transform selection
             _currentTrans = null;
+        }
+    }
+
+    // TODO: convert this to getter setter CurrTrans
+    public Transform GetCurrentTrans()
+    {
+
+        return _currentTrans;
+    }
+
+    public void SetCanBeDropped(Transform trans, bool canBeDropped)
+    {
+        if(trans == _currentTrans)
+        {
+            Debug.Log($"can be dropped set to {canBeDropped}");
+            m_canBeDropped = canBeDropped;
         }
     }
 }

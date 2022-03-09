@@ -30,10 +30,6 @@ public class GridObjectButton : MonoBehaviour
         m_isDragging = true;
     }
 
-    public void MouseOverCustom()
-    {
-
-    }
 
     // this might be more performant if invoked repeating when the player is actually moving the object not all the time
     public void Update()
