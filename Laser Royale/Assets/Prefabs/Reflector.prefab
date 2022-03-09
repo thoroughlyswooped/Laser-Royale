@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8657055218820950080}
   - component: {fileID: 8657055218820950081}
   - component: {fileID: 8657055218820950110}
+  - component: {fileID: 3238013810814342603}
   m_Layer: 0
   m_Name: Reflector
   m_TagString: Hittable
@@ -122,3 +123,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc14ee11521e9940b3f4408b78b8d59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lockRotation: 0
+  lockTranslation: 0
+--- !u!50 &3238013810814342603
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8657055218820950111}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5000265744781906996}
   - component: {fileID: 5000265744781906998}
   - component: {fileID: 9009567580136761773}
+  - component: {fileID: 2612795146918175860}
   m_Layer: 0
   m_Name: EndPoint
   m_TagString: Hittable
@@ -124,3 +125,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockRotation: 0
   lockTranslation: 0
+--- !u!50 &2612795146918175860
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5000265744781906955}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
