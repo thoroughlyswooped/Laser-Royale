@@ -24,18 +24,21 @@ public class GridObjectButton : MonoBehaviour
 
     public void CustomOnMouseDown()
     {
-        // hide button image
-        GetComponent<Image>().enabled = false;
+        if (rotate.currEditMode == EditMode.Translate)
+        {
+            // hide button image
+            GetComponent<Image>().enabled = false;
 
-        // show actual game object
-        gridObject.gameObject.SetActive(true);
+            // show actual game object
+            gridObject.gameObject.SetActive(true);
 
-        // record difference between mouse and center of object
-        gridObject.transform.position = Camera.main.ScreenToWorldPoint(transform.position);
-        dif = gridObject.transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            // record difference between mouse and center of object
+            gridObject.transform.position = Camera.main.ScreenToWorldPoint(transform.position);
+            dif = gridObject.transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        // set rotate current trans
-        rotate.SetCurrTrans(gridObject.transform, dif);
+            // set rotate current trans
+            rotate.SetCurrTrans(gridObject.transform, dif);
+        }
     }
 
 
