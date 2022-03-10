@@ -47,7 +47,6 @@ public class GridObject : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("exit collision");
         if (rotate.GetCurrentTrans() == transform)
         {
             RevertToNormalState();

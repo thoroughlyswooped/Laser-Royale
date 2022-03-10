@@ -5,18 +5,25 @@ using UnityEngine;
 
 public class GridObjectButton : MonoBehaviour
 {
-    bool m_isDragging;
     bool m_canBeDropped;
+    Rotate rotate;
 
     Vector2 dif;
 
     public GridObject gridObject;
     public Transform gridObjectInGameParent;
 
+    public void Start()
+    {
+        if (Rotate.instance != null)
+        {
+            rotate = Rotate.instance;
+        }
+       
+    }
+
     public void CustomOnMouseDown()
     {
-        Debug.Log("OnButtonClick");
-
         // hide button image
         GetComponent<Image>().enabled = false;
 
@@ -27,7 +34,8 @@ public class GridObjectButton : MonoBehaviour
         gridObject.transform.position = Camera.main.ScreenToWorldPoint(transform.position);
         dif = gridObject.transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        m_isDragging = true;
+        // set rotate current trans
+        rotate.SetCurrTrans(gridObject.transform, dif);
     }
 
 
@@ -38,17 +46,10 @@ public class GridObjectButton : MonoBehaviour
         {
             MouseUp();
         }
-
-        if (m_isDragging)
-        {
-            gridObject.transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) + dif;
-        }
     }
 
     void MouseUp()
     {
-        m_isDragging = false;
-
         // if the object can be dropped, drop it
         if (m_canBeDropped)
         {

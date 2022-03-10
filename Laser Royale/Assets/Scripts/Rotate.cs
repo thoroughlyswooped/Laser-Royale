@@ -65,12 +65,37 @@ public class Rotate : MonoBehaviour
             }
             else if(currEditMode == EditMode.Translate)
             {
-                _currentTrans.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) + dif;
+                if (isScreenPointInCamera(Input.mousePosition))
+                {
+                    _currentTrans.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) + dif;
+                }
+                else
+                {
+                    m_canBeDropped = false;
+                    MouseUp();
+                }
             }
         }
 
         // Reset mouse pressed for next frame
         m_mousePressed = false;
+    }
+
+    bool isScreenPointInCamera(Vector2 screenPoint)
+    {
+        Vector2 viewPoint = Camera.main.ScreenToViewportPoint(screenPoint);
+
+        if(viewPoint.x < 0 || viewPoint.x > 1)
+        {
+            return false;
+        }
+
+        if (viewPoint.y < 0 || viewPoint.y > 1)
+        {
+            return false;
+        }
+
+        return true;
     }
 
     public void SetCurrTrans(Transform trans)
@@ -86,6 +111,22 @@ public class Rotate : MonoBehaviour
         {
             m_ogPosition = _currentTrans.position;
             dif = _currentTrans.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        }
+    }
+
+    public void SetCurrTrans(Transform trans, Vector2 dif)
+    {
+        // Called from local OnMouseDown() so mouse has been pressed this frame
+        m_mousePressed = true;
+
+
+        // Clear or set the current transform
+        _currentTrans = trans == _currentTrans ? null : trans;
+
+        if (_currentTrans && currEditMode == EditMode.Translate)
+        {
+            m_ogPosition = _currentTrans.position;
+            this.dif = dif;
         }
     }
 
@@ -131,7 +172,6 @@ public class Rotate : MonoBehaviour
     {
         if(trans == _currentTrans)
         {
-            Debug.Log($"can be dropped set to {canBeDropped}");
             m_canBeDropped = canBeDropped;
         }
     }
