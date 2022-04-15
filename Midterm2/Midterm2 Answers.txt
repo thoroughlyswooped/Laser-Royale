@@ -1,0 +1,7 @@
+1. True
+2. True
+3. The exploration phase of the XP lifecycle is the first phase. The purpose of this stage is to ensure that the project is doable and to come up with rough estimates that can be used for the Planning stage of XP. Some common practices that are part of the exploration phase are making prototypes, making rough estimate story cards, and exploring the technology (to prove the product is feasible). 
+4. NA
+5. True
+6. Refactoring is the practice of changing or restructuring code without breaking the functionality of that code. Refactoring is an important part XP because adjustments need to be made frequently and that requires refactoring. A common practice when refactoring is to right unit tests for the code before refactoring that can be used after refactoring to ensure that the desired functionality is implemented correctly.
+7. Pair programming is the practice of two programmers programming at the same time. Both programmers work on the same piece of code and actively participate in constructing the code. The idea behind this is that two minds are better than one. Pair programming also generally occurs between programmers of similar experience levels.
