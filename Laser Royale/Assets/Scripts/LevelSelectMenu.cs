@@ -9,6 +9,7 @@ public class LevelSelectMenu : MonoBehaviour
 
     public void Awake()
     {
+        //TODO: implement progress tracking here.
         //get all the scenes except the first and last
         for (int i = 1; i < SceneManager.sceneCountInBuildSettings; i++)
         {
