@@ -9,9 +9,9 @@ public class LevelSelectMenu : MonoBehaviour
 
     public void Awake()
     {
-        //TODO: implement progress tracking here.
+        int maxLevelIndex = PlayerPrefs.GetInt("MaxLevel", 1);
         //get all the scenes except the first and last
-        for (int i = 1; i < SceneManager.sceneCountInBuildSettings; i++)
+        for (int i = 1; i <= maxLevelIndex; i++)
         {
             //Create a button for each level
             GameObject newButton = Instantiate(levelButtonPrefab, contentTransform);

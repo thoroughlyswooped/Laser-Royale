@@ -7,6 +7,8 @@ public class GridObject : MonoBehaviour
     public bool lockRotation;
     public bool lockTranslation;
     Rotate rotate;
+   
+    protected LevelLoader levelLoader;
     int m_ogSortLayer;
     LayerMask m_ogLayer;
     Color m_ogColor;
@@ -18,6 +20,12 @@ public class GridObject : MonoBehaviour
         {
             rotate = Rotate.instance;
         }
+
+        if (LevelLoader.instance != null)
+        {
+            levelLoader = LevelLoader.instance;
+        }
+
         m_sRenderer = GetComponent<SpriteRenderer>();
         m_ogSortLayer = m_sRenderer.sortingLayerID;
         m_ogColor = m_sRenderer.color;
