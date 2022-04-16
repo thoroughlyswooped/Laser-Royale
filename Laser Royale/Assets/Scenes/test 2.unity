@@ -2022,6 +2022,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Refractor
       objectReference: {fileID: 0}
+    - target: {fileID: 2938790737388990691, guid: d6687cccde3ae414dad261cd914e4911, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6687cccde3ae414dad261cd914e4911, type: 3}
 --- !u!1 &1261211351
