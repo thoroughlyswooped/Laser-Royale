@@ -76,14 +76,13 @@ public class Refractor : HittableObject
         IncomingDir.Normalize();
         SurfaceNormal.Normalize();
 
-        /** Note to Nathan, the incoming vector needed to be flipped around because it was 180 degrees from the vector we want when finding the angle.
-        /** The refraction indices were also flipped (i.e. it was (in/out)).
+        /** Note to Dylan, the incoming vector needed to be flipped around because it was 180 degrees from the vector we want when finding the angle.
         /** Converting the angle in sinTheta2 expression was using Rad2Deg instead of Deg2Rad.
         /** The outgoingAngle was converting to radians, but Mathf.Asin() already outputs the angle in radians.
         /** This is not meant to be harsh I just was curious what the bug was and wanted to take a look. I also know that whenever I have a bug I want to know why it wasn't working
         /** not just that it is working now. */
         float InAngle_deg = Vector2.Angle(-IncomingDir, SurfaceNormal);
-        float sinTheta2 = (outRefractionIndex/ inRefractionIndex) * Mathf.Sin(Mathf.Deg2Rad * InAngle_deg);
+        float sinTheta2 = (inRefractionIndex/ outRefractionIndex) * Mathf.Sin(Mathf.Deg2Rad * InAngle_deg);
 
         // Reflect the beem if we are past the critical angle
         if(sinTheta2 > 1)
