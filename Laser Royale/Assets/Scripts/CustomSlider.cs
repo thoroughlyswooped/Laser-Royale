@@ -16,10 +16,6 @@ public class CustomSlider : MonoBehaviour
 
     [SerializeField]
     float prevVal;
-    private void Awake()
-    {
-        Initialize();
-    }
 
     public void Initialize()
     {
@@ -36,6 +32,8 @@ public class CustomSlider : MonoBehaviour
         {
             GetComponent<Slider>().value = vol;
         }
+
+        SetValue(vol);
     }
 
     public void SetValue(float val)
