@@ -1008,7 +1008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 520856492881948604, guid: ee398791dafa8f54d9313f0b9d144b9d, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 520856492881948604, guid: ee398791dafa8f54d9313f0b9d144b9d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1421,15 +1421,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2141719173791841688, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2141719173791841688, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2141719173791841688, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 3305322017299801759, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: mixerGroup
@@ -1569,11 +1569,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7698448804510701765, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7698448804510701765, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
@@ -1676,7 +1676,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &544565050
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1693,7 +1693,7 @@ RectTransform:
   - {fileID: 1641241695}
   - {fileID: 465989024}
   m_Father: {fileID: 827844310}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2336,9 +2336,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 296406667}
   - {fileID: 1453768034}
   - {fileID: 544565050}
-  - {fileID: 296406667}
   - {fileID: 1887175357}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -2554,6 +2554,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4941612077706833093, guid: ad75db7f3bbf3034daed199e94d3a6db, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1535310330}
+    - target: {fileID: 4941612077706833093, guid: ad75db7f3bbf3034daed199e94d3a6db, type: 3}
+      propertyPath: settingsMenu
+      value: 
+      objectReference: {fileID: 544565049}
     - target: {fileID: 4941612077706833094, guid: ad75db7f3bbf3034daed199e94d3a6db, type: 3}
       propertyPath: m_Name
       value: GameController
@@ -3080,15 +3088,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2141719173791841688, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2141719173791841688, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2141719173791841688, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 3305322017299801759, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: mixerGroup
@@ -3236,11 +3244,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7698448804510701765, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7698448804510701765, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8022539372954781884, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_text
@@ -3428,7 +3436,7 @@ RectTransform:
   - {fileID: 240960932}
   - {fileID: 140745814}
   m_Father: {fileID: 827844310}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3492,6 +3500,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 429fbec7e59e45f468cda26c139d6fa6, type: 3}
+--- !u!114 &1535310330 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2380225725139941661, guid: 429fbec7e59e45f468cda26c139d6fa6, type: 3}
+  m_PrefabInstance: {fileID: 1535310329}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2ede4ae1ed71d4393d62424043e36c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1566434155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3579,15 +3598,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2141719173791841688, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2141719173791841688, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2141719173791841688, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 3305322017299801759, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: mixerGroup
@@ -3723,11 +3742,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7698448804510701765, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7698448804510701765, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8022539372954781884, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_text

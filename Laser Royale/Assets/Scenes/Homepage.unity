@@ -717,15 +717,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2141719173791841688, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2141719173791841688, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2141719173791841688, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 3305322017299801759, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: mixerGroup
@@ -861,11 +861,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7698448804510701765, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7698448804510701765, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8022539372954781884, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_text
@@ -1298,7 +1298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &807390322
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1718,6 +1718,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4941612077706833093, guid: ad75db7f3bbf3034daed199e94d3a6db, type: 3}
+      propertyPath: settingsMenu
+      value: 
+      objectReference: {fileID: 807390321}
     - target: {fileID: 4941612077706833094, guid: ad75db7f3bbf3034daed199e94d3a6db, type: 3}
       propertyPath: m_Name
       value: GameController
@@ -1745,15 +1749,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2141719173791841688, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2141719173791841688, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2141719173791841688, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 3305322017299801759, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: mixerGroup
@@ -1901,11 +1905,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7698448804510701765, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7698448804510701765, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8022539372954781884, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_text
@@ -3210,15 +3214,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2141719173791841688, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2141719173791841688, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2141719173791841688, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 3305322017299801759, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: mixerGroup
@@ -3358,11 +3362,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7698448804510701765, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7698448804510701765, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d5caa50f288bfc46949903ba46806de, type: 3}

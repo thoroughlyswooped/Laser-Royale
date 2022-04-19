@@ -34,10 +34,13 @@ public class CustomSlider : MonoBehaviour
         }
 
         SetValue(vol);
+
+        Debug.Log("initialize");
     }
 
     public void SetValue(float val)
     {
+
         textVal.text = val.ToString("0.0");
 
         mixerGroup.audioMixer.SetFloat(paramString, val);
