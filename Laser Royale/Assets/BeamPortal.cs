@@ -11,33 +11,21 @@ public class BeamPortal : MonoBehaviour
         Vector2 oldPos;
         Vector2 newPos;
         Vector2 newDir;
+        dir = Vector2.Reflect(dir, hitInfo.normal);
+
         if (Portal_1 == portal) 
         {
-            //Vector2 startObj = Portal_1.transform.position;
-            //Vector2 endObj = Portal_2.transform.position;
-
-
-            //newDir = Portal_1.transform.localToWorldMatrix.MultiplyPoint(dir);
-            newDir = Portal_2.transform.localToWorldMatrix.MultiplyPoint(-dir) - Portal_2.transform.position;
+            newDir = Portal_2.transform.localToWorldMatrix.MultiplyPoint(dir) - Portal_2.transform.position;
 
             oldPos = Portal_1.transform.worldToLocalMatrix.MultiplyPoint(hitInfo.point);
             newPos = Portal_2.transform.localToWorldMatrix.MultiplyPoint(oldPos);
-           // oldPos = hitInfo.point;
-            //newPos = Portal_2.transform.position;
         }
         else
         {
-            //Vector2 endObj = Portal_1.transform.position;
-            //Vector2 startObj = Portal_2.transform.position;
-            //newDir = Portal_2.transform.worldToLocalMatrix.MultiplyPoint(dir);
-            //newDir = Portal_2.transform.localToWorldMatrix.MultiplyPoint(dir + hitInfo.point);
-            newDir = Portal_1.transform.localToWorldMatrix.MultiplyPoint(-dir) - Portal_1.transform.position;
-
-
+            newDir = Portal_1.transform.localToWorldMatrix.MultiplyPoint(dir) - Portal_1.transform.position;
 
             oldPos = Portal_2.transform.worldToLocalMatrix.MultiplyPoint(hitInfo.point);
             newPos = Portal_1.transform.localToWorldMatrix.MultiplyPoint(oldPos);
-            //newPos = Portal_1.transform.position;
         }
 
        
