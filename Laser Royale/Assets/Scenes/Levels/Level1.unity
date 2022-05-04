@@ -278,6 +278,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5861453312946511355, guid: f913a60dde75afa41a18a676f7270dea, type: 3}
+      propertyPath: lockRotation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861453312946511355, guid: f913a60dde75afa41a18a676f7270dea, type: 3}
+      propertyPath: lockTranslation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861453312946511355, guid: f913a60dde75afa41a18a676f7270dea, type: 3}
       propertyPath: m_inspectorProperties.m_layerMask.m_Bits
       value: 9
       objectReference: {fileID: 0}
