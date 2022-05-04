@@ -6,18 +6,6 @@ public class AudioManager : MonoBehaviour
 {
     public List<Sound> sounds;
 
-    [HideInInspector]
-    public float musicVol;
-    [HideInInspector]
-    public float sfxVol;
-    [HideInInspector]
-    public bool musicMute;
-    [HideInInspector]
-    public bool sfxMute;
-
-    public CustomSlider sfxSlider;
-    public CustomSlider musicSlider;
-
     public static AudioManager instance;
     private void Awake()
     {
@@ -59,26 +47,6 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         Play("BackgroundMusic");
-
-        musicVol = PlayerPrefs.GetFloat("musicVol", 0f);
-        sfxVol = PlayerPrefs.GetFloat("sfxVol", 0f);
-
-        if (musicVol == -80)
-        {
-            musicSlider.Initialize();
-        }
-        else
-        {
-            musicSlider.mixerGroup.audioMixer.SetFloat("Volume_Music", musicVol);
-        }
-        if (sfxVol == -80)
-        {
-            sfxSlider.Initialize();
-        }
-        else
-        {
-            sfxSlider.mixerGroup.audioMixer.SetFloat("Volume_SFX", sfxVol);
-        }
     }
 
     //Play

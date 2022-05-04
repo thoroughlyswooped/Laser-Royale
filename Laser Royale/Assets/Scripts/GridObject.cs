@@ -31,6 +31,13 @@ public class GridObject : MonoBehaviour
         m_ogColor = m_sRenderer.color;
 
         m_ogLayer = gameObject.layer;
+
+        GridObjectStart();
+    }
+
+    public virtual void GridObjectStart()
+    {
+
     }
 
     private void OnMouseDown()

@@ -7,6 +7,7 @@ public class Reflector : HittableObject
     public override Vector2[] Hit(Vector2 dir, RaycastHit2D hitInfo, float maxCastRange)
     {
         var pos = hitInfo.point;
+        Debug.Log($"dir: <{dir.x}, {dir.y}>");
         Vector2 newDir = Vector2.Reflect(dir, hitInfo.normal);
 
         // Stop hitting yourself
