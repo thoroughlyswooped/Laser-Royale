@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Reflector : HittableObject
 {
-    public override Vector2[] Hit(Vector2 dir, RaycastHit2D hitInfo, float maxCastRange)
+    public override Vector2[] Hit(Vector2 dir, RaycastHit2D hitInfo, float maxCastRange, GameObject laser = null)
     {
         var pos = hitInfo.point;
         Debug.Log($"dir: <{dir.x}, {dir.y}>");

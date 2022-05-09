@@ -13,7 +13,7 @@ public class SubBeamPortal : HittableObject
         parentObj = GetComponentInParent<BeamPortal>();
     }
 
-    public override Vector2[] Hit(Vector2 dir, RaycastHit2D hitInfo, float maxCastRange)
+    public override Vector2[] Hit(Vector2 dir, RaycastHit2D hitInfo, float maxCastRange, GameObject laser= null)
     {
         Debug.Log("hit");
         return parentObj.Hit(dir, hitInfo, maxCastRange, gameObject);
