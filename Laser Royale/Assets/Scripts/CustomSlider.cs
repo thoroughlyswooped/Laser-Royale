@@ -16,10 +16,6 @@ public class CustomSlider : MonoBehaviour
 
     [SerializeField]
     float prevVal;
-    private void Awake()
-    {
-        Initialize();
-    }
 
     public void Initialize()
     {
@@ -36,10 +32,15 @@ public class CustomSlider : MonoBehaviour
         {
             GetComponent<Slider>().value = vol;
         }
+
+        SetValue(vol);
+
+        Debug.Log("initialize");
     }
 
     public void SetValue(float val)
     {
+
         textVal.text = val.ToString("0.0");
 
         mixerGroup.audioMixer.SetFloat(paramString, val);

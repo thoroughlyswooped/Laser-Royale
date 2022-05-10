@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class EndPoint : HittableObject
 {
 
-    public override Vector2[] Hit(Vector2 dir, RaycastHit2D hitInfo, float maxCastRange)
+    public override Vector2[] Hit(Vector2 dir, RaycastHit2D hitInfo, float maxCastRange, GameObject laser = null)
     {
         //TODO: Ezra: implement scene change/game end menu here.
         Debug.Log("Win");

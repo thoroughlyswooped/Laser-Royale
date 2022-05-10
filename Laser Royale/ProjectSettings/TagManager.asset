@@ -12,10 +12,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Portal_1
   - Water
   - UI
-  - 
+  - Portal_2
   - 
   - 
   - 
@@ -42,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: background
+    uniqueID: 354144235
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
