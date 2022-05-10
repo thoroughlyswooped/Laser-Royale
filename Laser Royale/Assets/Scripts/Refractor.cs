@@ -81,7 +81,15 @@ public class Refractor : HittableObject
         /** The outgoingAngle was converting to radians, but Mathf.Asin() already outputs the angle in radians.
         /** This is not meant to be harsh I just was curious what the bug was and wanted to take a look. I also know that whenever I have a bug I want to know why it wasn't working
         /** not just that it is working now. */
-        float InAngle_deg = Vector2.Angle(-IncomingDir, SurfaceNormal);
+        float InAngle_deg = Vector2.SignedAngle(-IncomingDir, SurfaceNormal);
+        int multiplier = 1;
+
+        if (Vector2.Dot(IncomingDir, Vector2.left) > 0)
+        {
+
+            multiplier = -1;
+        }
+       
         float sinTheta2 = (inRefractionIndex/ outRefractionIndex) * Mathf.Sin(Mathf.Deg2Rad * InAngle_deg);
 
         // Reflect the beem if we are past the critical angle
@@ -89,7 +97,10 @@ public class Refractor : HittableObject
         {
             return Vector2.Reflect(-IncomingDir, SurfaceNormal);
         }
+        
         float outgoingAngle = Mathf.Asin(sinTheta2);
-        return new Vector2(Mathf.Cos(outgoingAngle), Mathf.Sin(outgoingAngle));
+
+        
+        return new Vector2(Mathf.Cos(outgoingAngle) * multiplier, Mathf.Sin(outgoingAngle));
     }
 }
