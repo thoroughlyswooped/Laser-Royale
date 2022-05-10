@@ -2356,7 +2356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8657055218820950110, guid: daec73d6c68444c4c85d837edad3fa8e, type: 3}
       propertyPath: lockRotation
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8657055218820950110, guid: daec73d6c68444c4c85d837edad3fa8e, type: 3}
       propertyPath: lockTranslation
@@ -2461,6 +2461,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 8657055218820950110, guid: daec73d6c68444c4c85d837edad3fa8e, type: 3}
+      propertyPath: lockTranslation
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8657055218820950111, guid: daec73d6c68444c4c85d837edad3fa8e, type: 3}
       propertyPath: m_Name
       value: Reflector
@@ -2528,7 +2532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8657055218820950110, guid: daec73d6c68444c4c85d837edad3fa8e, type: 3}
       propertyPath: lockRotation
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8657055218820950110, guid: daec73d6c68444c4c85d837edad3fa8e, type: 3}
       propertyPath: lockTranslation
